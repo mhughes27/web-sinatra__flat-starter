@@ -1,1 +1,36 @@
-<p>hello world</p>
+<h1>Results</h1>
+
+
+<div>
+<h3>Temperature</h3>
+<form method="GET" action="/convert">
+	<p><input type="text" name="celsius" value="<%= @degree_c %>">˚C</p>
+	<p>=</p>
+	<p><input type="text" name="fahrenheit" value="<%= @degree_f %>">˚F</p>
+	<button type="submit" value="submit">Convert</button>
+</form>
+</div>
+
+
+<div>
+<h3>Distance</h3>
+<form method="post" action="/convert">
+	<p><input type="text" name="kilometers" value="<%= @distance_km %>">kilometers</p>
+	<p>=</p>
+	<p><input type="text" name="miles" value="<%= @distance_m %>">miles</p>
+	<button type="submit" value="submit">Convert</button>
+</form>
+</div>
+
+
+<div>
+<h3>Mass/Weight</h3>
+<form method="post" action="/convert">
+	<p><input type="text" name="kilograms" value="<%= @mass_kg %>">kilograms</p>
+	<p>=</p>
+	<p><input type="text" name="pounds" value="<%= @mass_lb %>">pounds</p>
+	<p>=</p>
+	<p><input type="text" name="stones" value="<%= @mass_st %>">stones</p>
+	<button type="submit" value="submit">Convert</button>
+</form>
+</div>
