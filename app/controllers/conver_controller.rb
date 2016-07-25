@@ -2,9 +2,11 @@ MyApp.get "/" do
   erb :"home"
 end
 
-# MyApp.get "/example" do
-#   erb :"weather"
-# end
+MyApp.post "/convert" do
+	
+	erb :"/convert"
+end
+
 
 # MyApp.get "/weather" do
 # 	@city = params[:name]
