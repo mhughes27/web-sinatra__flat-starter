@@ -9,8 +9,9 @@ MyApp.post "/temperature" do
 	@temperature = Temperature.new
 	@degree_c = params[:celsius].to_i
 	@degree_f = params[:fahrenheit].to_i
-		
-
+	
+	@toCelsius = @temperature.f_to_c(@degree_f)
+	@toFahrenheit = @temperature.c_to_f(@degree_c)
 
 	erb :"/convert"
 end
@@ -20,8 +21,8 @@ MyApp.post "/distance" do
 	@distance_km = params[:kilometers].to_i
 	@distance_m = params[:miles].to_i
 	
-	@tomiles = @distance.km_to_m(@distance_km)
-	@tokilometers = @distance.m_to_km(@distance_m)
+	@toMiles = @distance.km_to_m(@distance_km)
+	@toKilometers = @distance.m_to_km(@distance_m)
 	
 	erb :"/convert"
 end
@@ -40,9 +41,3 @@ end
 
 
 
-# MyApp.get "/weather" do
-# 	@city = params[:name]
-# 	@weather_info = weatherData(params[:location])
-
-# 	erb :"/weather"
-# end
