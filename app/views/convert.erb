@@ -2,7 +2,7 @@
 
 <div>
 <h3>Temperature</h3>
-<form method="GET" action="/convert">
+<form method="get" action="/convert">
 	<p><input type="text" name="celsius" value="<%= @toCelsius %>">˚C</p>
 	<p>=</p>
 	<p><input type="text" name="fahrenheit" value="<% @toFahrenheit %>">˚F</p>
@@ -13,7 +13,7 @@
 
 <div>
 <h3>Distance</h3>
-<form method="post" action="/convert">
+<form method="get" action="/convert">
 	<p><input type="text" name="kilometers" value="<%= @toKilometers %>">kilometers</p>
 	<p>=</p>
 	<p><input type="text" name="miles" value="<%= @toMiles %>">miles</p>
@@ -24,7 +24,7 @@
 
 <div>
 <h3>Mass/Weight</h3>
-<form method="post" action="/convert">
+<form method="get" action="/convert">
 	<p><input type="text" name="kilograms" value="<%= @kilograms %>">kilograms</p>
 	<p>=</p>
 	<p><input type="text" name="pounds" value="<%= @pounds %>">pounds</p>
