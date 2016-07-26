@@ -1,6 +1,6 @@
 
 # def c_to_f
-degree_c = 0
+degree_c = 100
 degree_f = (degree_c * 1.8) + 32
 puts degree_f	
 

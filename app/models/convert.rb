@@ -2,11 +2,11 @@ require	"pry"
 
 class Temperature
 	
-	def c_to_f(degree_c)
+	def cel_fah(degree_c)
 		return (degree_c * 1.8) + 32
 	end
  
- 	def f_to_c(degree_f)
+ 	def fah_cel(degree_f)
  		return (degree_f - 32) / 1.8
  	end
 # this is the end for the coversions class

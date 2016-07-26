@@ -9,10 +9,11 @@ MyApp.post "/temperature" do
 	@temperature = Temperature.new
 	
 	@degree_c = params[:celsius].to_i
-	@degree_f = params[:fahrenheit].to_i
+	@toFahrenheit = @temperature.cel_fah(@degree_c)
 	
-	@toCelsius = @temperature.f_to_c(@degree_f)
-	@toFahrenheit = @temperature.c_to_f(@degree_c)
+	@degree_f = params[:fahrenheit].to_i
+	@toCelsius = @temperature.fah_cel(@degree_f)
+
 
 	erb :"/convert"
 end
