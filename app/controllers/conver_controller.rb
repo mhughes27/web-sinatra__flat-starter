@@ -7,6 +7,7 @@ end
 
 MyApp.post "/temperature" do
 	@temperature = Temperature.new
+	
 	@degree_c = params[:celsius].to_i
 	@degree_f = params[:fahrenheit].to_i
 	
@@ -28,10 +29,20 @@ MyApp.post "/distance" do
 end
 
 MyApp.post "/mass" do
-	@mass = Mass.new
-	@mass_kg = params[:kilograms]
-	@mass_lb = params[:pounds]
-	@mass_st = params[:stones]
+	@kg = Mass.new
+	@mass_kg = params[:kilograms].to_i
+	@pounds = @kg.kilograms_to_lb(@mass_kg)
+	@stones = @kg.kilograms_to_st(@mass_kg)
+
+	@lb = Mass.new
+	@mass_lb = params[:pounds].to_i
+	@stones = @lb.pounds_to_st(@mass_lb)
+	@kilograms = @lb.pounds_to_kg(@mass_lb)
+
+	@st = Mass.new
+	@mass_st = params[:stones].to_i
+	@pounds = @st.stones_to_lb(@mass_st)
+	@kilograms = @st.stones_to_kg(@mass_st)
 	
 	erb :"/convert"
 end
