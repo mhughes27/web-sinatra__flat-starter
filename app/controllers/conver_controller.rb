@@ -6,13 +6,13 @@ MyApp.get "/" do
 end
 
 MyApp.post "/temperature" do
-	@temperature = Temperature.new
+	@temp1 = Temperature.new
+	@degree_c = params[:celsius].to_f
+	@toFahrenheit = @temp1.cel_fah(@degree_c)
 	
-	@degree_c = params[:celsius].to_i
-	@toFahrenheit = @temperature.cel_fah(@degree_c)
-	
-	@degree_f = params[:fahrenheit].to_i
-	@toCelsius = @temperature.fah_cel(@degree_f)
+	@temp2 = Temperature.new
+	@degree_f = params[:fahrenheit].to_f
+	@toCelsius = @temp2.fah_cel(@degree_f)
 
 
 	erb :"/convert"
@@ -20,8 +20,8 @@ end
 
 MyApp.post "/distance" do
 	@distance = Distance.new
-	@distance_km = params[:kilometers].to_i
-	@distance_m = params[:miles].to_i
+	@distance_km = params[:kilometers].to_f
+	@distance_m = params[:miles].to_f
 	
 	@toMiles = @distance.km_to_m(@distance_km)
 	@toKilometers = @distance.m_to_km(@distance_m)
