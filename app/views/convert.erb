@@ -1,11 +1,12 @@
 <h1>Results</h1>
 
+
 <div>
 <h3>Temperature</h3>
 <form method="get" action="/">
 	<p><input type="text" name="celsius" value="<%= @toCelsius %>">˚C</p>
 	<p>=</p>
-	<p><input type="text" name="fahrenheit" value="<% @toFahrenheit %>">˚F</p>
+	<p><input type="text" name="fahrenheit" value="<%= @toFahrenheit %>">˚F</p>
 	<button type="submit" value="submit">return</button>
 </form>
 </div>
@@ -33,3 +34,7 @@
 	<button type="submit" value="submit">Return</button>
 </form>
 </div>
+<!-- <h4>kg params <%= @mass_kg %></h4>
+<h4>lb params <%= @mass_lb %></h4>
+<h4>st params <%= @mass_st %></h4> -->
+
